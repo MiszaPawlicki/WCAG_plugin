@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* background colour */
+      body {
+        background-color: #fdde59;
+        font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+        font: 14px monserrat;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="popup-content">
+      <label
+        for="guideline-input"
+        style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif"
+        >Enter a WCAG guideline</label
+      >
+      <input type="text" id="guideline-input" placeholder="e.g. 1.1.1" />
+      <button id="autofill-button">Autofill</button>
+      <div id="autofill-result"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

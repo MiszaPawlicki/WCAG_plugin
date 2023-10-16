@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "WCAG Autocomplete",
+  "version": "1.0",
+  "description": "A WCAG guideline autocomplete extension",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "commands": {
+    "activate-extension": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "MacCtrl+Shift+K"
+      },
+      "description": "Activate Extension"
+    }
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
