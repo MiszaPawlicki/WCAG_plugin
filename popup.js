@@ -38,10 +38,10 @@ function wcagify(guideline, callback) {
     { action: "callWCAGify", data: guideline },
     (response) => {
       if (response && response.action === "backgroundResponse") {
-        const details = response.data.criterion + " - " + response.data.link;
-        writeToClipboard(details);
+        
+        writeToClipboard(response.data.criterion + " - " + response.data.link);
         // Call the callback function with the result
-        callback(details);
+        callback(response.data.criterion);
       } else {
         callback("No results");
       }
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     wcagify(guideline, function (result) {
       console.log("result:" + result);
       autofillResult.textContent = result;
+      autofillResult.setAttribute("aria-live", "polite");
     });
   });
 
@@ -72,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       wcagify(guideline, function (result) {
         console.log("result:" + result);
         autofillResult.textContent = result;
+        autofillResult.setAttribute("aria-live", "polite");
       });
     }
   });
