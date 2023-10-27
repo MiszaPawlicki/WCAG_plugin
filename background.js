@@ -526,7 +526,10 @@ const criteria = [
 // a function to prepare the guidline name to be concatinated with the wcag url
 // makes all chars lower, replaces spaces with dashes, and removes parenthesis
 function linkConversion(inputString) {
-  return inputString.toLowerCase().replace(/ /g, "-").replace(/[()]/g, "");
+  return inputString
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[() ,]/g, "");
 }
 
 const wcagpath = "https://www.w3.org/WAI/WCAG22/Understanding";

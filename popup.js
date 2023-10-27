@@ -38,7 +38,6 @@ function wcagify(guideline, callback) {
     { action: "callWCAGify", data: guideline },
     (response) => {
       if (response && response.action === "backgroundResponse") {
-        
         writeToClipboard(response.data.criterion + " - " + response.data.link);
         // Call the callback function with the result
         callback(response.data.criterion);
