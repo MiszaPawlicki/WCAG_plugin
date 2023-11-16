@@ -40,7 +40,7 @@ function wcagify(guideline, callback) {
       if (response && response.action === "backgroundResponse") {
         writeToClipboard(response.data.criterion + " - " + response.data.link);
         // Call the callback function with the result
-        callback(response.data.criterion);
+        callback(response.data.criterion + " - " + response.data.level);
       } else {
         callback("No results");
       }

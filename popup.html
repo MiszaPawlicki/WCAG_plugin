@@ -2,17 +2,37 @@
 <html>
   <head>
     <style>
-      /* background colour */
       body {
         background-color: #fdde59;
         font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
       }
+      #guideline-input {
+        margin-bottom: 0.5em;
+      }
       label {
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 1em;
         font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-        font: 14px monserrat;
+        font-size: 1em;
         font-weight: bold;
+      }
+
+      #autofill-button {
+        border: 0.125em solid #000;
+        color: #000;
+        background-color: transparent;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        width: 100%;
+        margin-bottom: 1em;
+      }
+
+      #autofill-button:hover,
+      #autofill-button:focus {
+        background-color: #000;
+        color: #fff;
+        outline: none;
       }
     </style>
   </head>
@@ -21,10 +41,12 @@
       <label
         for="guideline-input"
         style="font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif"
-        >Enter a WCAG guideline</label
+        >Enter a guideline number:</label
       >
       <input type="text" id="guideline-input" placeholder="e.g. 1.1.1" />
-      <button aria-label="Find WCAG guideline" id="autofill-button">Find guideline</button>
+      <button aria-label="Find WCAG guideline" id="autofill-button">
+        Find guideline
+      </button>
       <div id="autofill-result"></div>
     </div>
     <script src="popup.js"></script>
